@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pizzas y Pastas Rochely</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Pizzas y Pastas Rochely en Cancún: pizzas, pastas, menú infantil, combos y banquetes. Av. Chac Mool, SM 216. Abierto de 12:00 p. m. a 1:00 a. m. Pide por WhatsApp al 984 216 9707.">
+<meta property="og:title" content="Pizzas y Pastas Rochely · Aquí todos caben">
+<meta property="og:description" content="Pizzas, pastas y banquetes en Cancún. Pide por WhatsApp.">
+<meta property="og:image" content="logo-completo.png">
+<meta name="theme-color" content="#3A281C">
+<link rel="icon" href="sello.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Lato:wght@400;700;900&display=swap">
+<style>
+/* Layout: banda café de bienvenida con el sello → promociones → carta con líneas punteadas (y armado de pedido) → pedido por WhatsApp → eventos → galería → nosotros → opiniones → ubicación con croquis. Verde pistache como color de marca, café para texto y bandas, dorado solo en filetes y precios. */
+:root{
+  --bg:#FAF7EF;        /* crema */
+  --surface:#EEF2E4;   /* pistache muy claro */
+  --paper:#FFFDF8;     /* tarjetas */
+  --ink:#3A281C;       /* café espresso */
+  --muted:#6E5C4C;     /* café avellana */
+  --pista:#9CBF6E;     /* verde pistache */
+  --pista-deep:#557A33;/* pistache profundo, legible como texto */
+  --gold:#B08632;      /* dorado */
+  --gold-soft:#EADDB8;
+  --tomato:#B8321E;    /* rojo del sello, solo como acento */
+  --band:#3A281C;
+  --band-ink:#F7F1E3;
+  --line:#DED5C2;
+  --wa:#1F9D55; --wa-ink:#FFFFFF;
+  --display:"Playfair Display", Georgia, "Times New Roman", serif;
+  --body:"Lato", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-wood:#9A6438;--f-wood2:#6F4423;--f-crust:#D9994C;--f-crust2:#A86A2C;--f-sauce:#C2412A;--f-cheese:#F4C863;--f-pep:#9C2A1C;--f-pep2:#C9503A;--f-basil:#4F8A3A;--f-plate:#FFFDF8;--f-rim:#EFE4D0;--f-bowl:#F7EFE1;--f-noodle:#EBC05C;--f-noodle2:#D9A944;--f-ball:#7A3F22;--f-cloth:#F1E8CF;--f-check:#C9D9AE;--f-drink:#E8B23A;
+  --road:#E4DCCB; --road-ink:#6E5C4C; --block:#EEF2E4;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1B1510; --surface:#1F2319; --paper:#251E17; --ink:#F3EBDD; --muted:#BCAE98;
+    --pista:#A9CB7C; --pista-deep:#B9D893; --gold:#D9B25E; --gold-soft:#4A3D22; --tomato:#E06A50;
+    --band:#120E0A; --band-ink:#F3EBDD; --line:#3A3128; --wa:#25B565; --wa-ink:#08140D;
+    --road:#3A3128; --road-ink:#BCAE98; --block:#232A1C;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1B1510; --surface:#1F2319; --paper:#251E17; --ink:#F3EBDD; --muted:#BCAE98;
+  --pista:#A9CB7C; --pista-deep:#B9D893; --gold:#D9B25E; --gold-soft:#4A3D22; --tomato:#E06A50;
+  --band:#120E0A; --band-ink:#F3EBDD; --line:#3A3128; --wa:#25B565; --wa-ink:#08140D;
+  --road:#3A3128; --road-ink:#BCAE98; --block:#232A1C;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1rem;line-height:1.6;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--band)}
+img{max-width:100%}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.12;margin:0}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.eyebrow{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--pista-deep)}
+.on-band .eyebrow,.hero .eyebrow,.cta .eyebrow{color:var(--pista)}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 22px;border-radius:999px;font:inherit;font-weight:700;text-decoration:none;font-size:1rem;border:1.5px solid transparent;cursor:pointer;line-height:1.2}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-wa{background:var(--wa);color:var(--wa-ink)}
+.btn-wa:hover{filter:brightness(1.08)}
+.btn-pista{background:var(--pista);color:#2A1D13}
+.btn-pista:hover{filter:brightness(1.05)}
+.btn-line{border-color:var(--line);color:var(--ink);background:var(--paper)}
+.btn-line:hover{border-color:var(--gold)}
+.btn-ghost{border-color:color-mix(in srgb, var(--band-ink) 40%, transparent);color:var(--band-ink)}
+.btn-ghost:hover{border-color:var(--pista);color:var(--pista)}
+
+/* Encabezado fijo */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--band);color:var(--band-ink);border-bottom:1px solid color-mix(in srgb, var(--gold) 35%, transparent)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.brand img{width:48px;height:48px;flex:none;display:block}
+.brand b{font-family:var(--display);font-weight:600;font-size:1.12rem;line-height:1.1;display:block;white-space:nowrap}
+.brand small{color:var(--pista);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.nav-links{display:flex;gap:20px;font-size:.92rem;align-items:center}
+.nav-links a{text-decoration:none;opacity:.85}
+.nav-links a:hover{opacity:1;color:var(--pista)}
+.menu-btn{display:none;background:transparent;border:1.5px solid color-mix(in srgb, var(--band-ink) 35%, transparent);color:var(--band-ink);border-radius:12px;width:46px;height:46px;cursor:pointer;place-items:center;flex:none}
+.menu-btn svg{width:22px;height:22px}
+.drawer{background:var(--band);color:var(--band-ink);border-top:1px solid color-mix(in srgb, var(--band-ink) 12%, transparent)}
+.drawer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;padding-block:10px 18px}
+.drawer a{text-decoration:none;padding:10px 0;font-weight:700;border-bottom:1px solid color-mix(in srgb, var(--band-ink) 10%, transparent)}
+@media (max-width:980px){.nav-links{display:none}.menu-btn{display:grid}}
+@media (min-width:981px){.drawer{display:none!important}}
+
+/* Portada */
+.hero{background:var(--band);color:var(--band-ink);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:-160px;bottom:-200px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle, color-mix(in srgb, var(--pista) 30%, transparent), transparent 65%);pointer-events:none}
+.lights{position:absolute;left:0;right:0;top:0;width:100%;height:70px;pointer-events:none;z-index:0}
+.lights path{fill:none;stroke:color-mix(in srgb, var(--band-ink) 35%, transparent);stroke-width:1.2}
+.lights .b{fill:#F6C766}
+.lights .g{fill:#F6C766;opacity:.22}
+@media (prefers-reduced-motion:no-preference){.lights .g{animation:glow 3.2s ease-in-out infinite alternate}.lights .g:nth-of-type(3n){animation-delay:-1.1s}.lights .g:nth-of-type(3n+1){animation-delay:-2.2s}@keyframes glow{from{opacity:.12}to{opacity:.32}}}
+.feast{position:relative;overflow:hidden}
+.feast .lights{height:50px;opacity:.85}
+.feast>*:not(.lights){position:relative;z-index:1}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:76px 40px}
+.hero h1{font-size:clamp(2.3rem, 6vw, 4rem);font-weight:600;margin-top:14px}
+.hero h1 em{font-style:italic;color:var(--pista);font-weight:400}
+.hero .lead{margin-top:18px;font-size:1.1rem;max-width:33em;opacity:.9}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-size:.92rem;padding:6px 14px;border-radius:999px;border:1px solid color-mix(in srgb, var(--band-ink) 25%, transparent)}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--pista);box-shadow:0 0 0 4px color-mix(in srgb, var(--pista) 25%, transparent)}
+.status.closed i{background:var(--gold);box-shadow:0 0 0 4px color-mix(in srgb, var(--gold) 25%, transparent)}
+.hero-art{position:relative;display:grid;place-items:center}
+.hero-art svg{width:min(100%,380px);aspect-ratio:1;max-width:100%;filter:drop-shadow(0 18px 30px rgba(0,0,0,.4))}
+.hero-art img{position:absolute;height:auto;aspect-ratio:1;width:31%;max-width:120px;right:4%;bottom:2%;filter:drop-shadow(0 8px 18px rgba(0,0,0,.4))}
+@media (prefers-reduced-motion:no-preference){.hero-art svg{animation:spin 90s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}}
+.facts{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.fact{border:1px solid color-mix(in srgb, var(--gold) 45%, transparent);border-radius:14px;padding:14px 18px;display:flex;gap:14px;align-items:flex-start;background:color-mix(in srgb, var(--band-ink) 4%, transparent);min-width:0}
+.fact svg{width:22px;height:22px;color:var(--gold);flex:none;margin-top:2px}
+.fact b{display:block}
+.fact span{opacity:.8;font-size:.92rem}
+@media (max-width:820px){
+  .hero .wrap{grid-template-columns:1fr;padding-block:52px 36px;gap:28px}
+  .hero-art{order:-1}.hero-art svg{width:min(70%,280px)}
+  .hero-art img{right:12%;width:26%}
+  .facts{grid-template-columns:1fr}
+}
+
+/* Secciones */
+section.block{padding-block:72px}
+.head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px 32px;margin-bottom:34px}
+.head h2{font-size:clamp(1.9rem, 4.5vw, 2.7rem);font-weight:600;margin-top:8px}
+.head p{color:var(--muted);max-width:36em}
+.alt{background:var(--surface)}
+.rule{display:flex;align-items:center;gap:14px;color:var(--gold)}
+.rule::before,.rule::after{content:"";flex:1;height:1px;background:color-mix(in srgb, var(--gold) 50%, transparent)}
+@media (max-width:640px){section.block{padding-block:56px}}
+
+/* Promociones */
+.promos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.promo{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.promo .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.promo h3{font-size:1.3rem;font-weight:600}
+.promo .cprice{font-family:var(--display);font-size:1.7rem;font-weight:600;color:var(--gold);font-variant-numeric:tabular-nums;white-space:nowrap}
+.promo p{color:var(--muted)}
+.promo .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.promo .actions .btn{padding:10px 16px;font-size:.92rem}
+.promo.feature{border:2px solid var(--gold)}
+.ribbon{align-self:flex-start;background:var(--pista);color:#2A1D13;font-size:.7rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+@media (max-width:860px){.promos{grid-template-columns:1fr}}
+
+/* Menú */
+.tabs{display:flex;gap:8px;margin-bottom:26px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{font:inherit;font-weight:700;font-size:.95rem;padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;white-space:nowrap;flex:none}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tab.kids{border-color:var(--pista)}
+.tab.kids[aria-selected="true"]{background:var(--pista);color:#2A1D13;border-color:var(--pista)}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:4px 56px}
+.dish{padding-block:14px;border-bottom:1px solid var(--line);min-width:0}
+.dish .row{display:flex;align-items:baseline;gap:10px}
+.dish h3{font-size:1.16rem;font-weight:600;min-width:0}
+.dish .dots{flex:1;border-bottom:2px dotted color-mix(in srgb, var(--gold) 70%, transparent);transform:translateY(-4px);min-width:16px}
+.dish .price{font-weight:700;font-variant-numeric:tabular-nums}
+.dish p{color:var(--muted);font-size:.93rem;margin-top:4px}
+.add{align-self:center;flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--pista-deep);background:transparent;color:var(--pista-deep);font:700 1.2rem/1 var(--body);cursor:pointer;display:grid;place-items:center}
+.add:hover{background:var(--pista);border-color:var(--pista);color:#2A1D13}
+.add.ok{background:var(--pista);border-color:var(--pista);color:#2A1D13}
+.tag{display:inline-block;font-family:var(--body);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:900;color:var(--tomato);margin-left:6px;vertical-align:middle}
+.size{grid-column:1/-1;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.menu-note{margin-top:22px;color:var(--muted);font-size:.9rem}
+.kids-panel{grid-column:1/-1;background:var(--paper);border:2px dashed var(--pista);border-radius:20px;padding:22px 24px;display:grid;grid-template-columns:auto 1fr;gap:16px 22px;align-items:center;margin-bottom:8px}
+.kids-panel svg{width:74px;height:74px}
+.kids-panel h3{font-size:1.4rem}
+.kids-h{margin-top:14px;color:var(--pista-deep)}
+.kids-panel p{color:var(--muted)}
+@media (max-width:720px){.menu{grid-template-columns:1fr}.kids-panel{grid-template-columns:1fr;padding:18px}}
+.draft{margin-top:16px;font-size:.86rem;color:var(--muted);border:1px dashed var(--gold);border-radius:12px;padding:10px 14px;background:color-mix(in srgb, var(--gold-soft) 30%, transparent)}
+.draft b{color:var(--ink)}
+
+/* Pedido */
+.order{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:36px;align-items:start}
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:18px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;counter-increment:s}
+.steps li::before{content:counter(s);width:44px;height:44px;border-radius:50%;border:1.5px solid var(--gold);display:grid;place-items:center;font-family:var(--display);font-size:1.25rem;color:var(--gold)}
+.steps li>div>b{display:block;font-size:1.05rem}
+.steps span{color:var(--muted)}
+.ticket{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:24px;display:grid;gap:16px;min-width:0}
+.ticket h3{font-size:1.4rem}
+.lines{list-style:none;padding:0;margin:0;display:grid;gap:0}
+.lines li{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;padding-block:10px;border-bottom:1px dashed var(--line)}
+.lines .nm{min-width:0}
+.lines .nm small{display:block;color:var(--muted);font-variant-numeric:tabular-nums}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:700 1rem/1 var(--body);cursor:pointer}
+.qty span{min-width:1.4em;text-align:center;font-variant-numeric:tabular-nums;font-weight:700}
+.lines .sub{font-weight:700;font-variant-numeric:tabular-nums;min-width:4.2em;text-align:right}
+.empty{color:var(--muted);padding:14px;border:1px dashed var(--line);border-radius:12px;text-align:center}
+.total{display:flex;justify-content:space-between;align-items:baseline;font-family:var(--display);font-size:1.5rem}
+.total b{font-variant-numeric:tabular-nums;color:var(--gold)}
+.fields{display:grid;gap:12px}
+label{font-weight:700;font-size:.9rem;display:grid;gap:6px}
+input,textarea,select{font:inherit;font-weight:400;padding:11px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);width:100%;min-width:0}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--pista-deep)}
+textarea{min-height:84px;resize:vertical}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg label{font-weight:700;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1.5px solid var(--line);border-radius:999px;cursor:pointer;font-size:.9rem}
+.seg input{width:auto;accent-color:var(--pista-deep)}
+.seg label:has(input:checked){border-color:var(--pista-deep);background:color-mix(in srgb, var(--pista) 18%, transparent)}
+.fine{font-size:.85rem;color:var(--muted)}
+@media (max-width:860px){.order{grid-template-columns:1fr}}
+
+/* Eventos */
+.feast{background:var(--band);color:var(--band-ink);border-radius:22px;padding:28px;display:grid;grid-template-columns:auto 1fr auto;gap:20px 32px;align-items:center;margin-bottom:28px}
+.feast .feast-art{width:200px;max-width:100%;aspect-ratio:320/210}
+.feast h3{font-size:1.6rem;font-weight:600}
+.feast ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:12px 0 0}
+.feast li{border:1px solid color-mix(in srgb, var(--gold) 55%, transparent);border-radius:999px;padding:4px 12px;font-size:.88rem}
+.feast .big{font-family:var(--display);font-size:2.8rem;color:var(--gold);line-height:1;font-variant-numeric:tabular-nums}
+.feast .big small{font-family:var(--body);font-size:.85rem;color:var(--band-ink);opacity:.75;display:block;margin-top:6px;max-width:16em}
+.feast .btn{margin-top:14px}
+@media (max-width:760px){.feast{grid-template-columns:1fr;padding:22px}.feast .feast-art{width:100%}}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.plan{border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:14px;background:var(--paper);min-width:0}
+.plan.featured{border:2px solid var(--gold)}
+.plan .who{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.plan h3{font-size:1.45rem;font-weight:600}
+.plan .cost{font-family:var(--display);font-size:2.1rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+.plan .cost small{font-family:var(--body);font-size:.85rem;font-weight:400;color:var(--muted)}
+.plan ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:.95rem}
+.plan li{display:flex;gap:10px}
+.plan li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--pista-deep);margin-top:.62em;flex:none}
+.plan .btn{margin-top:auto}
+@media (max-width:880px){.plans{grid-template-columns:1fr}}
+.rules{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px 28px;color:var(--muted);font-size:.93rem}
+.rules b{color:var(--ink)}
+
+/* Galería */
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:200px;gap:14px}
+.gallery figure{margin:0;border-radius:18px;overflow:hidden;position:relative;background:var(--surface);display:grid;place-items:center}
+.gallery figure.big{grid-column:span 2;grid-row:span 2}
+.gallery figure.wide{grid-column:span 2}
+.gallery figure.dark{background:var(--band)}
+.gallery figure.green{background:color-mix(in srgb, var(--pista) 35%, var(--bg))}
+.gallery svg{width:62%;height:auto;aspect-ratio:1;max-width:100%}
+.gallery svg.w{width:78%;aspect-ratio:320/210}
+.gallery figure img{width:46%;max-width:150px}
+.gallery svg.scene{width:100%;height:100%;aspect-ratio:auto;display:block}
+.gallery figcaption{position:absolute;left:12px;bottom:12px;background:color-mix(in srgb, var(--band) 82%, transparent);color:var(--band-ink);font-size:.8rem;font-weight:700;padding:5px 11px;border-radius:999px}
+@media (max-width:760px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.gallery figure.big{grid-column:span 2}}
+
+/* Nosotros */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:44px;align-items:start}
+.about .story{display:grid;gap:16px;font-size:1.06rem}
+.about .story p{max-width:34em}
+.about .quote{font-family:var(--display);font-style:italic;font-size:1.5rem;color:var(--pista-deep);line-height:1.3}
+.pillars{display:grid;gap:14px}
+.pillar{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:18px;border-radius:16px;background:var(--paper);border:1px solid var(--line)}
+.pillar svg{width:54px;height:54px}
+.pillar h3{font-size:1.2rem}
+.pillar p{color:var(--muted);font-size:.95rem;margin-top:4px}
+@media (max-width:820px){.about{grid-template-columns:1fr;gap:28px}}
+
+/* Opiniones */
+.reviews{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:36px;align-items:start}
+.gcard{background:var(--band);color:var(--band-ink);border-radius:20px;padding:26px;display:grid;gap:14px}
+.gcard h3{font-size:1.5rem}
+.gcard p{opacity:.85}
+.stars-static{color:var(--gold);font-size:1.6rem;letter-spacing:4px}
+.stars{display:flex;gap:4px;border:0;padding:0;margin:0}
+.stars legend{font-weight:700;font-size:.9rem;margin-bottom:6px;padding:0}
+.stars input{position:absolute;opacity:0;width:1px;height:1px}
+.stars label{cursor:pointer;font-size:2rem;line-height:1;color:var(--line);display:inline}
+.stars label.on{color:var(--gold)}
+.stars input:focus-visible + label{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+@media (max-width:820px){.reviews{grid-template-columns:1fr}}
+
+/* Ubicación */
+.where{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:40px;align-items:center}
+.where h3{font-size:1.5rem}
+.info{display:grid;gap:20px}
+.info .addr{font-size:1.08rem}
+.hours{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.hours td{padding:10px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:700}
+.phone{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-family:var(--display);font-size:1.5rem;font-variant-numeric:tabular-nums}
+.copy{font:inherit;font-family:var(--body);font-size:.82rem;font-weight:700;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.copy:hover{border-color:var(--gold)}
+.btnrow{display:flex;flex-wrap:wrap;gap:10px}
+.map{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:12px;min-width:0}
+.map svg{width:100%;height:auto;display:block}
+.spot{margin:0 0 12px;display:grid;gap:6px}
+.spot svg{border-radius:12px}
+.spot figcaption{font-size:.85rem;color:var(--muted);padding:0 6px;font-weight:700}
+.map p{font-size:.8rem;color:var(--muted);padding:8px 6px 2px}
+.m-road{fill:var(--road)} .m-block{fill:var(--block)} .m-lbl{fill:var(--road-ink);font:700 11px var(--body);letter-spacing:.06em}
+.m-main{fill:var(--gold-soft)} .m-mainlbl{fill:var(--ink);font:700 12px var(--body);letter-spacing:.08em}
+.m-pin{fill:var(--tomato)} .m-pindot{fill:#FFFDF8} .m-tag{fill:var(--band)} .m-tagtxt{fill:var(--band-ink);font:700 12px var(--body)}
+@media (max-width:820px){.where{grid-template-columns:1fr}}
+
+/* Pie */
+footer{background:var(--band);color:var(--band-ink);padding-block:40px 110px}
+footer .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center}
+footer img{width:64px;height:64px;display:block}
+footer p{opacity:.8;font-size:.9rem}
+footer b{font-family:var(--display);font-size:1.2rem;font-weight:600}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.9rem}
+footer nav a{text-decoration:none;opacity:.85}
+footer nav a:hover{color:var(--pista)}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+/* WhatsApp flotante y barra de pedido */
+.wa-float{position:fixed;z-index:25;right:calc(18px + env(safe-area-inset-right, 0px));bottom:calc(18px + env(safe-area-inset-bottom, 0px));display:flex;align-items:center;gap:10px;background:var(--wa);color:var(--wa-ink);text-decoration:none;font-weight:700;padding:14px 20px 14px 16px;border-radius:999px;box-shadow:0 10px 28px rgba(0,0,0,.28)}
+.wa-float svg{width:26px;height:26px}
+@media (max-width:480px){.wa-float span{display:none}.wa-float{padding:15px}}
+.cartbar{position:fixed;z-index:26;left:0;right:0;bottom:0;background:var(--band);color:var(--band-ink);border-top:1px solid color-mix(in srgb, var(--gold) 45%, transparent);padding-bottom:env(safe-area-inset-bottom,0px);box-shadow:0 -10px 28px rgba(0,0,0,.2)}
+.cartbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.cartbar .sum{min-width:0;font-size:.95rem}
+.cartbar .sum b{font-family:var(--display);font-size:1.25rem;color:var(--gold);font-variant-numeric:tabular-nums}
+.cartbar .btn{padding:11px 18px;font-size:.95rem}
+@media (prefers-reduced-motion:no-preference){
+  .wa-float{animation:pop .5s ease-out .6s both}
+  @keyframes pop{from{transform:scale(.6)}to{transform:scale(1)}}
+}
+
+/* Ilustraciones */
+.f-wood{fill:var(--f-wood)} .f-grain circle{stroke:var(--f-wood2);stroke-width:1.5;opacity:.45}
+.f-crust{fill:var(--f-crust)} .f-sauce{fill:var(--f-sauce)} .f-cheese{fill:var(--f-cheese)}
+.f-cut line{stroke:var(--f-crust2);stroke-width:2;opacity:.55}
+.f-pep{fill:var(--f-pep)} .f-pep2{fill:var(--f-pep2);opacity:.7} .f-basil{fill:var(--f-basil)}
+.f-plate{fill:var(--f-plate)} .f-rim{fill:none;stroke:var(--f-rim);stroke-width:3} .f-bowl{fill:var(--f-bowl)}
+.f-noodle{stroke:var(--f-noodle);stroke-width:6} .f-noodle2{stroke:var(--f-noodle2);stroke-width:5}
+.f-ball{fill:var(--f-ball)} .f-parm circle{fill:#FFFDF8}
+.f-cloth{fill:var(--f-cloth)} .f-check path{stroke:var(--f-check);stroke-width:14;opacity:.55;fill:none}
+.f-glass{fill:#FFFFFF;opacity:.75} .f-drink{fill:var(--f-drink)} .f-ice{fill:#FFFFFF;opacity:.8}
+</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.24-.64.8-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.84-.86 2.05 0 1.21.88 2.38 1 2.54.12.17 1.73 2.64 4.2 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4Z"/></g></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="pizza" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="98" class="f-wood"/><g fill="none" class="f-grain"><circle cx="100" cy="100" r="92"/><circle cx="100" cy="100" r="88"/></g>
+    <circle cx="100" cy="100" r="82" class="f-crust"/><circle cx="100" cy="100" r="72" class="f-sauce"/>
+    <path class="f-cheese" d="M100 34c18 1 30 8 40 18 12 3 20 14 24 30 4 14 0 28-6 38 2 14-6 26-20 32-12 6-24 12-38 10-14 2-28-4-38-12-12-6-20-18-22-32-4-14-2-28 6-38 4-14 14-24 26-30 8-10 18-16 28-16z"/>
+    <circle cx="86" cy="52" r="5" class="f-sauce"/><circle cx="140" cy="86" r="4" class="f-sauce"/><circle cx="60" cy="80" r="4" class="f-sauce"/><circle cx="98" cy="126" r="5" class="f-sauce"/><circle cx="132" cy="124" r="3" class="f-sauce"/><circle cx="118" cy="40" r="3" class="f-sauce"/>
+    <g class="f-cut"><line x1="100" y1="100" x2="179.2" y2="121.2"/><line x1="100" y1="100" x2="121.2" y2="179.2"/><line x1="100" y1="100" x2="42.0" y2="158.0"/><line x1="100" y1="100" x2="20.8" y2="78.8"/><line x1="100" y1="100" x2="78.8" y2="20.8"/><line x1="100" y1="100" x2="158.0" y2="42.0"/></g>
+    <circle cx="72" cy="66" r="10" class="f-pep"/><circle cx="70" cy="64" r="4" class="f-pep2"/><circle cx="128" cy="60" r="10" class="f-pep"/><circle cx="126" cy="58" r="4" class="f-pep2"/><circle cx="150" cy="104" r="10" class="f-pep"/><circle cx="148" cy="102" r="4" class="f-pep2"/><circle cx="122" cy="142" r="10" class="f-pep"/><circle cx="120" cy="140" r="4" class="f-pep2"/><circle cx="74" cy="136" r="10" class="f-pep"/><circle cx="72" cy="134" r="4" class="f-pep2"/><circle cx="50" cy="98" r="10" class="f-pep"/><circle cx="48" cy="96" r="4" class="f-pep2"/><circle cx="102" cy="100" r="10" class="f-pep"/><circle cx="100" cy="98" r="4" class="f-pep2"/><circle cx="100" cy="36" r="10" class="f-pep"/><circle cx="98" cy="34" r="4" class="f-pep2"/><circle cx="148" cy="72" r="10" class="f-pep"/><circle cx="146" cy="70" r="4" class="f-pep2"/>
+    <ellipse cx="88" cy="78" rx="9" ry="4.2" transform="rotate(30 88 78)" class="f-basil"/><ellipse cx="136" cy="120" rx="9" ry="4.2" transform="rotate(-40 136 120)" class="f-basil"/><ellipse cx="64" cy="118" rx="9" ry="4.2" transform="rotate(70 64 118)" class="f-basil"/><ellipse cx="112" cy="72" rx="9" ry="4.2" transform="rotate(-20 112 72)" class="f-basil"/><ellipse cx="96" cy="152" rx="9" ry="4.2" transform="rotate(10 96 152)" class="f-basil"/>
+  </symbol>
+  <symbol id="pasta" viewBox="0 0 200 200">
+    <clipPath id="bowlclip"><circle cx="100" cy="100" r="64"/></clipPath>
+    <circle cx="100" cy="100" r="96" class="f-plate"/><circle cx="100" cy="100" r="80" class="f-rim"/><circle cx="100" cy="100" r="68" class="f-bowl"/>
+    <g clip-path="url(#bowlclip)" fill="none" stroke-linecap="round"><g class="f-noodle"><path d="M42 70 q14 -16 28 0 t28 0 t28 0"/><path d="M36 86 q14 -16 28 0 t28 0 t28 0"/><path d="M48 100 q14 -16 28 0 t28 0 t28 0"/><path d="M38 114 q14 -16 28 0 t28 0 t28 0"/><path d="M50 128 q14 -16 28 0 t28 0 t28 0"/><path d="M44 142 q14 -16 28 0 t28 0 t28 0"/><path d="M60 58 q14 -16 28 0 t28 0 t28 0"/><path d="M56 156 q14 -16 28 0 t28 0 t28 0"/></g><g class="f-noodle2"><path d="M52 78 q12 14 24 0 t24 0 t24 0"/><path d="M46 94 q12 14 24 0 t24 0 t24 0"/><path d="M58 108 q12 14 24 0 t24 0 t24 0"/><path d="M48 122 q12 14 24 0 t24 0 t24 0"/><path d="M62 136 q12 14 24 0 t24 0 t24 0"/></g></g>
+    <path class="f-sauce" d="M100 70c14 0 26 8 28 20 3 12-4 24-16 28-10 4-22 3-30-4-9-7-11-20-5-30 5-9 13-14 23-14z"/>
+    <circle cx="92" cy="90" r="9" class="f-ball"/><circle cx="112" cy="98" r="9" class="f-ball"/><circle cx="98" cy="110" r="8" class="f-ball"/>
+    <g class="f-parm"><circle cx="86" cy="104" r="2"/><circle cx="108" cy="86" r="2"/><circle cx="118" cy="110" r="1.6"/><circle cx="100" cy="96" r="1.6"/><circle cx="90" cy="80" r="1.4"/></g>
+    <ellipse cx="116" cy="80" rx="9" ry="4.2" transform="rotate(-30 116 80)" class="f-basil"/><ellipse cx="104" cy="76" rx="8" ry="4" transform="rotate(40 104 76)" class="f-basil"/>
+  </symbol>
+  <symbol id="slice" viewBox="0 0 200 200">
+    <path d="M100 188 L22 40 Q100 4 178 40 Z" class="f-crust"/>
+    <path d="M100 172 L34 48 Q100 20 166 48 Z" class="f-cheese"/>
+    <path d="M22 40 Q100 4 178 40 L172 54 Q100 20 28 54 Z" class="f-crust" style="fill:var(--f-crust2)"/>
+    <circle cx="80" cy="70" r="12" class="f-pep"/><circle cx="122" cy="74" r="12" class="f-pep"/><circle cx="100" cy="112" r="11" class="f-pep"/><circle cx="96" cy="150" r="7" class="f-pep"/>
+    <circle cx="78" cy="68" r="5" class="f-pep2"/><circle cx="120" cy="72" r="5" class="f-pep2"/><circle cx="98" cy="110" r="4" class="f-pep2"/>
+  </symbol>
+  <symbol id="sc-mesa" viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="320" fill="#8A5A36"/><path d="M0 36H400" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M0 82H400" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M0 128H400" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M0 174H400" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M0 220H400" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M0 266H400" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M0 312H400" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/>
+<circle cx="62" cy="70" r="40" fill="#F5EEDD"/><circle cx="62" cy="70" r="30" fill="none" stroke="#EADDB8" stroke-width="2"/>
+<circle cx="340" cy="262" r="40" fill="#F5EEDD"/><circle cx="340" cy="262" r="30" fill="none" stroke="#EADDB8" stroke-width="2"/>
+<circle cx="350" cy="58" r="20" fill="#FFFFFF" fill-opacity=".7"/><circle cx="350" cy="58" r="14" fill="#9CBF6E"/><circle cx="346" cy="54" r="3" fill="#FFFFFF" fill-opacity=".8"/>
+<circle cx="52" cy="250" r="20" fill="#FFFFFF" fill-opacity=".7"/><circle cx="52" cy="250" r="14" fill="#D2A64A"/><circle cx="48" cy="246" r="3" fill="#FFFFFF" fill-opacity=".8"/>
+<circle cx="200" cy="160" r="96" fill="#2A1D13" fill-opacity=".25"/>
+<use href="#pizza" x="108" y="66" width="184" height="184"/>
+<g transform="translate(70 330) rotate(35.5)"><rect x="-15.0" y="-110" width="30" height="160" rx="15.0" fill="#9CBF6E"/><rect x="-12.0" y="-112" width="24" height="8" rx="4" fill="#00000022"/><ellipse cx="0" cy="-126" rx="14.0" ry="20.0" fill="#E0A878"/><ellipse cx="-13.0" cy="-118" rx="4" ry="9" fill="#E0A878" transform="rotate(-25 -13.0 -118)"/></g>
+<g transform="translate(330 340) rotate(-34.2)"><rect x="-15.0" y="-111" width="30" height="161" rx="15.0" fill="#3A281C"/><rect x="-12.0" y="-113" width="24" height="8" rx="4" fill="#00000022"/><ellipse cx="0" cy="-127" rx="14.0" ry="20.0" fill="#C68A5C"/><ellipse cx="-13.0" cy="-119" rx="4" ry="9" fill="#C68A5C" transform="rotate(-25 -13.0 -119)"/></g>
+<g transform="translate(410 130) rotate(-99.5)"><rect x="-15.0" y="-112" width="30" height="162" rx="15.0" fill="#EADDB8"/><rect x="-12.0" y="-114" width="24" height="8" rx="4" fill="#00000022"/><ellipse cx="0" cy="-128" rx="14.0" ry="20.0" fill="#8D5A3B"/><ellipse cx="-13.0" cy="-120" rx="4" ry="9" fill="#8D5A3B" transform="rotate(-25 -13.0 -120)"/></g>
+<g transform="translate(150 -14) rotate(167.7)"><rect x="-14.0" y="-84" width="28" height="134" rx="14.0" fill="#C9A24A"/><rect x="-11.0" y="-86" width="22" height="8" rx="4" fill="#00000022"/><ellipse cx="0" cy="-100" rx="13.0" ry="19.0" fill="#F0C29A"/><ellipse cx="-12.0" cy="-92" rx="4" ry="9" fill="#F0C29A" transform="rotate(-25 -12.0 -92)"/></g>
+</symbol>
+<symbol id="sc-fachada" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CFE0B4"/><stop offset="1" stop-color="#EEF2E4"/></linearGradient>
+<radialGradient id="warm" cx=".5" cy=".75" r=".8"><stop offset="0" stop-color="#FCE2A0"/><stop offset="1" stop-color="#D8953F"/></radialGradient>
+</defs>
+<rect width="400" height="300" fill="url(#sky)"/>
+<g><path d="M372 300C370 230 366 170 352 120" stroke="#8A5A36" stroke-width="9" fill="none" stroke-linecap="round"/>
+<path d="M352 120c-26-14-52-8-66 8 22-6 44-6 66-8Z" fill="#6E9447"/><path d="M352 120c14-26 40-34 60-26-24 2-44 12-60 26Z" fill="#7FA65A"/>
+<path d="M352 120c-8-26-30-40-52-38 20 8 38 22 52 38Z" fill="#9CBF6E"/><path d="M352 120c28-6 50 6 58 26-18-14-38-20-58-26Z" fill="#6E9447"/><path d="M352 120c4-26 22-46 40-50-14 14-28 30-40 50Z" fill="#9CBF6E"/></g>
+<rect x="20" y="34" width="340" height="250" fill="#F5EEDD"/>
+<rect x="20" y="34" width="340" height="250" fill="none" stroke="#E4D8BE" stroke-width="2"/>
+<rect x="28" y="44" width="324" height="64" rx="8" fill="#3A281C"/>
+<rect x="33" y="49" width="314" height="54" rx="6" fill="none" stroke="#D2A64A" stroke-width="1.5"/>
+<image href="sello.png" x="38" y="46" width="60" height="60"/>
+<text x="226" y="92" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-weight="700" font-size="42" letter-spacing="2" fill="#E2B656">Rochely</text>
+<g fill="#F6C766"><circle cx="40" cy="40" r="3"/><circle cx="90" cy="40" r="3"/><circle cx="140" cy="40" r="3"/><circle cx="190" cy="40" r="3"/><circle cx="240" cy="40" r="3"/><circle cx="290" cy="40" r="3"/><circle cx="340" cy="40" r="3"/></g>
+<rect x="28" y="112" width="24" height="20" fill="#F5EEDD"/><rect x="52" y="112" width="24" height="20" fill="#9CBF6E"/><rect x="76" y="112" width="24" height="20" fill="#F5EEDD"/><rect x="100" y="112" width="24" height="20" fill="#9CBF6E"/><rect x="124" y="112" width="24" height="20" fill="#F5EEDD"/><rect x="148" y="112" width="24" height="20" fill="#9CBF6E"/><rect x="172" y="112" width="24" height="20" fill="#F5EEDD"/><rect x="196" y="112" width="24" height="20" fill="#9CBF6E"/><rect x="220" y="112" width="24" height="20" fill="#F5EEDD"/><rect x="244" y="112" width="24" height="20" fill="#9CBF6E"/><rect x="268" y="112" width="24" height="20" fill="#F5EEDD"/><rect x="292" y="112" width="24" height="20" fill="#9CBF6E"/><rect x="316" y="112" width="24" height="20" fill="#F5EEDD"/><rect x="340" y="112" width="24" height="20" fill="#9CBF6E"/><path d="M28 132a12 12 0 0 0 24 0" fill="#F5EEDD"/><path d="M52 132a12 12 0 0 0 24 0" fill="#9CBF6E"/><path d="M76 132a12 12 0 0 0 24 0" fill="#F5EEDD"/><path d="M100 132a12 12 0 0 0 24 0" fill="#9CBF6E"/><path d="M124 132a12 12 0 0 0 24 0" fill="#F5EEDD"/><path d="M148 132a12 12 0 0 0 24 0" fill="#9CBF6E"/><path d="M172 132a12 12 0 0 0 24 0" fill="#F5EEDD"/><path d="M196 132a12 12 0 0 0 24 0" fill="#9CBF6E"/><path d="M220 132a12 12 0 0 0 24 0" fill="#F5EEDD"/><path d="M244 132a12 12 0 0 0 24 0" fill="#9CBF6E"/><path d="M268 132a12 12 0 0 0 24 0" fill="#F5EEDD"/><path d="M292 132a12 12 0 0 0 24 0" fill="#9CBF6E"/><path d="M316 132a12 12 0 0 0 24 0" fill="#F5EEDD"/><path d="M340 132a12 12 0 0 0 24 0" fill="#9CBF6E"/>
+<rect x="118" y="114" width="144" height="16" rx="3" fill="#3A281C"/>
+<text x="190" y="126" text-anchor="middle" font-family="Lato, system-ui, sans-serif" font-weight="900" font-size="10" letter-spacing="3" fill="#F5EEDD">PIZZAS Y PASTAS</text>
+<g transform="translate(34 0)"><rect x="0" y="158" width="86" height="80" rx="4" fill="#3A281C"/><rect x="6" y="164" width="74" height="68" fill="url(#warm)"/><rect x="12" y="208" width="30" height="5" fill="#8A5A36"/><rect x="44" y="208" width="30" height="5" fill="#8A5A36"/><circle cx="27" cy="204" r="7" fill="#D9994C"/><circle cx="27" cy="204" r="5" fill="#F4C863"/><circle cx="22" cy="190" r="6" fill="#5A3D2A" opacity=".55"/><rect x="16" y="196" width="12" height="12" rx="5" fill="#5A3D2A" opacity=".55"/><circle cx="62" cy="188" r="6" fill="#5A3D2A" opacity=".55"/><rect x="56" y="194" width="12" height="14" rx="5" fill="#5A3D2A" opacity=".55"/><path d="M43 164V232" stroke="#3A281C" stroke-width="3"/><rect x="-4" y="238" width="94" height="8" rx="2" fill="#5A3D2A"/><rect x="4" y="246" width="78" height="16" rx="3" fill="#B07A4A"/><circle cx="18" cy="242" r="9" fill="#6E9447"/><circle cx="34" cy="238" r="10" fill="#9CBF6E"/><circle cx="52" cy="242" r="9" fill="#7FA65A"/><circle cx="68" cy="238" r="9" fill="#9CBF6E"/><circle cx="26" cy="236" r="3" fill="#B8321E"/><circle cx="60" cy="234" r="3" fill="#F6C766"/></g><g transform="translate(260 0)"><rect x="0" y="158" width="86" height="80" rx="4" fill="#3A281C"/><rect x="6" y="164" width="74" height="68" fill="url(#warm)"/><rect x="12" y="208" width="30" height="5" fill="#8A5A36"/><rect x="44" y="208" width="30" height="5" fill="#8A5A36"/><circle cx="27" cy="204" r="7" fill="#D9994C"/><circle cx="27" cy="204" r="5" fill="#F4C863"/><circle cx="22" cy="190" r="6" fill="#5A3D2A" opacity=".55"/><rect x="16" y="196" width="12" height="12" rx="5" fill="#5A3D2A" opacity=".55"/><circle cx="62" cy="188" r="6" fill="#5A3D2A" opacity=".55"/><rect x="56" y="194" width="12" height="14" rx="5" fill="#5A3D2A" opacity=".55"/><path d="M43 164V232" stroke="#3A281C" stroke-width="3"/><rect x="-4" y="238" width="94" height="8" rx="2" fill="#5A3D2A"/><rect x="4" y="246" width="78" height="16" rx="3" fill="#B07A4A"/><circle cx="18" cy="242" r="9" fill="#6E9447"/><circle cx="34" cy="238" r="10" fill="#9CBF6E"/><circle cx="52" cy="242" r="9" fill="#7FA65A"/><circle cx="68" cy="238" r="9" fill="#9CBF6E"/><circle cx="26" cy="236" r="3" fill="#B8321E"/><circle cx="60" cy="234" r="3" fill="#F6C766"/></g>
+<path d="M150 284V196a40 40 0 0 1 80 0V284Z" fill="#5A3D2A"/>
+<path d="M158 284V198a32 32 0 0 1 64 0V284Z" fill="url(#warm)"/>
+<path d="M190 166V284" stroke="#5A3D2A" stroke-width="3"/>
+<path d="M150 284V196a40 40 0 0 1 80 0V284" fill="none" stroke="#D2A64A" stroke-width="2.5"/>
+<rect x="160" y="214" width="27" height="24" rx="3" fill="#3A281C"/><text x="173.5" y="229" text-anchor="middle" font-family="Lato, sans-serif" font-weight="900" font-size="5.5" fill="#B9D893">ABIERTO</text>
+<rect x="196" y="214" width="20" height="24" rx="3" fill="#F5EEDD" opacity=".9"/><text x="206" y="224" text-anchor="middle" font-family="Lato, sans-serif" font-weight="700" font-size="5" fill="#3A281C">12:00</text><text x="206" y="232" text-anchor="middle" font-family="Lato, sans-serif" font-weight="700" font-size="5" fill="#3A281C">1:00</text>
+<rect x="128" y="168" width="10" height="16" rx="2" fill="#3A281C"/><circle cx="133" cy="178" r="4" fill="#F6C766"/><rect x="242" y="168" width="10" height="16" rx="2" fill="#3A281C"/><circle cx="247" cy="178" r="4" fill="#F6C766"/>
+<path d="M0 284H400V300H0Z" fill="#D8CDB6"/><path d="M0 284H400" stroke="#B9AC92" stroke-width="2"/>
+<g><rect x="372" y="206" width="5" height="78" fill="#5A6B4A"/><rect x="312" y="196" width="74" height="18" rx="3" fill="#2F6B3F"/><rect x="314" y="198" width="70" height="14" rx="2" fill="none" stroke="#F5EEDD" stroke-width="1"/>
+<text x="349" y="208.5" text-anchor="middle" font-family="Lato, sans-serif" font-weight="900" font-size="7.5" fill="#F5EEDD">AV. CHAC MOOL</text>
+<rect x="340" y="216" width="40" height="14" rx="3" fill="#2F6B3F"/><text x="360" y="226" text-anchor="middle" font-family="Lato, sans-serif" font-weight="900" font-size="7" fill="#F5EEDD">SM 216</text></g>
+</symbol>
+<symbol id="sc-salon" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+<rect width="400" height="300" fill="#B07A4A"/><path d="M-160 300L74 196" stroke="#8A5A36" stroke-opacity=".5" stroke-width="2"/><path d="M-100 300L95 196" stroke="#8A5A36" stroke-opacity=".5" stroke-width="2"/><path d="M-40 300L116 196" stroke="#8A5A36" stroke-opacity=".5" stroke-width="2"/><path d="M20 300L137 196" stroke="#8A5A36" stroke-opacity=".5" stroke-width="2"/><path d="M80 300L158 196" stroke="#8A5A36" stroke-opacity=".5" stroke-width="2"/><path d="M140 300L179 196" stroke="#8A5A36" stroke-opacity=".5" stroke-width="2"/><path d="M200 300L200 196" stroke="#8A5A36" stroke-opacity=".5" stroke-width="2"/><path d="M260 300L221 196" stroke="#8A5A36" stroke-opacity=".5" stroke-width="2"/><path d="M320 300L242 196" stroke="#8A5A36" stroke-opacity=".5" stroke-width="2"/><path d="M380 300L263 196" stroke="#8A5A36" stroke-opacity=".5" stroke-width="2"/><path d="M440 300L284 196" stroke="#8A5A36" stroke-opacity=".5" stroke-width="2"/><path d="M500 300L305 196" stroke="#8A5A36" stroke-opacity=".5" stroke-width="2"/><path d="M560 300L326 196" stroke="#8A5A36" stroke-opacity=".5" stroke-width="2"/>
+<rect x="0" y="0" width="400" height="30" fill="#3A281C"/><rect x="40" y="22" width="320" height="8" rx="4" fill="#F6C766"/><rect x="20" y="30" width="360" height="40" fill="#F6C766" opacity=".18"/>
+<rect x="0" y="30" width="290" height="166" fill="#8A5A36"/><path d="M20 30V196" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M46 30V196" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M72 30V196" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M98 30V196" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M124 30V196" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M150 30V196" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M176 30V196" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M202 30V196" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M228 30V196" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M254 30V196" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/><path d="M280 30V196" stroke="#6F4423" stroke-opacity=".35" stroke-width="2"/>
+<rect x="40" y="30" width="250" height="166" fill="#F6C766" opacity=".08"/>
+<path d="M290 30H400V300H330Z" fill="#9CBF6E"/><path d="M290 30H400V60H290Z" fill="#7FA65A" opacity=".5"/>
+<path d="M300 150L400 140V236L318 210Z" fill="#5A3D2A"/><path d="M300 150L400 140V156L302 166Z" fill="#6E4A33"/>
+<path d="M300 180l100-12M306 196l94-12" stroke="#3A281C" stroke-opacity=".35" stroke-width="2"/>
+<rect x="122" y="70" width="44" height="80" fill="#3A281C" stroke="#D2A64A" stroke-width="2"/>
+<g><path d="M372 30C368 60 380 80 372 110" stroke="#6E9447" stroke-width="3" fill="none"/>
+<circle cx="366" cy="44" r="9" fill="#6E9447"/><circle cx="380" cy="58" r="8" fill="#7FA65A"/><circle cx="368" cy="72" r="9" fill="#9CBF6E"/><circle cx="380" cy="88" r="7" fill="#6E9447"/><circle cx="372" cy="104" r="8" fill="#7FA65A"/><circle cx="364" cy="118" r="6" fill="#9CBF6E"/></g>
+<rect x="213.0" y="170" width="70" height="10" rx="3" fill="#F5EEDD"/><rect x="213.0" y="180" width="70" height="3" fill="#EADDB8"/><rect x="245" y="180" width="6" height="36" fill="#C9A24A"/><rect x="234.0" y="212" width="28.0" height="5" rx="2" fill="#C9A24A"/><ellipse cx="230.5" cy="175.0" rx="7.777777777777778" ry="3.3333333333333335" fill="#FFFFFF"/><ellipse cx="265.5" cy="175.0" rx="7.777777777777778" ry="3.3333333333333335" fill="#FFFFFF"/><rect x="246" y="161" width="4" height="9" fill="#9CBF6E"/><circle cx="248" cy="161" r="2.5" fill="#B8321E"/><g transform="translate(196 212) scale(0.55)"><path d="M0 0V-64M22 0V-64" stroke="#D9B98A" stroke-width="4"/><path d="M0 -64Q11 -72 22 -64" stroke="#D9B98A" stroke-width="5" fill="none"/><path d="M6 -60V-30M11 -62V-30M16 -60V-30" stroke="#D9B98A" stroke-width="2.5"/><rect x="-4" y="-32" width="34" height="7" rx="3" fill="#E7CDA2"/><path d="M0 -25V30M28 -25V30" stroke="#D9B98A" stroke-width="4"/></g>
+<rect x="184.0" y="200" width="96" height="14" rx="3" fill="#F5EEDD"/><rect x="184.0" y="214" width="96" height="5" fill="#EADDB8"/><rect x="229" y="214" width="6" height="52" fill="#C9A24A"/><rect x="212.8" y="262" width="38.4" height="5" rx="2" fill="#C9A24A"/><ellipse cx="208.0" cy="207.0" rx="10.666666666666666" ry="4.666666666666667" fill="#FFFFFF"/><ellipse cx="256.0" cy="207.0" rx="10.666666666666666" ry="4.666666666666667" fill="#FFFFFF"/><rect x="230" y="187" width="4" height="13" fill="#9CBF6E"/><circle cx="232" cy="187" r="3.5" fill="#B8321E"/><g transform="translate(160 262) scale(0.75)"><path d="M0 0V-64M22 0V-64" stroke="#D9B98A" stroke-width="4"/><path d="M0 -64Q11 -72 22 -64" stroke="#D9B98A" stroke-width="5" fill="none"/><path d="M6 -60V-30M11 -62V-30M16 -60V-30" stroke="#D9B98A" stroke-width="2.5"/><rect x="-4" y="-32" width="34" height="7" rx="3" fill="#E7CDA2"/><path d="M0 -25V30M28 -25V30" stroke="#D9B98A" stroke-width="4"/></g>
+<rect x="141.0" y="244" width="130" height="18" rx="3" fill="#F5EEDD"/><rect x="141.0" y="262" width="130" height="6" fill="#EADDB8"/><rect x="203" y="262" width="6" height="70" fill="#C9A24A"/><rect x="180.0" y="328" width="52.0" height="5" rx="2" fill="#C9A24A"/><ellipse cx="173.5" cy="253.0" rx="14.444444444444445" ry="6.0" fill="#FFFFFF"/><ellipse cx="238.5" cy="253.0" rx="14.444444444444445" ry="6.0" fill="#FFFFFF"/><rect x="204" y="228" width="4" height="16" fill="#9CBF6E"/><circle cx="206" cy="228" r="4.5" fill="#B8321E"/><g transform="translate(110 324) scale(1)"><path d="M0 0V-64M22 0V-64" stroke="#D9B98A" stroke-width="4"/><path d="M0 -64Q11 -72 22 -64" stroke="#D9B98A" stroke-width="5" fill="none"/><path d="M6 -60V-30M11 -62V-30M16 -60V-30" stroke="#D9B98A" stroke-width="2.5"/><rect x="-4" y="-32" width="34" height="7" rx="3" fill="#E7CDA2"/><path d="M0 -25V30M28 -25V30" stroke="#D9B98A" stroke-width="4"/></g>
+</symbol>
+<symbol id="sc-terraza" viewBox="0 0 540 220" preserveAspectRatio="xMidYMid slice">
+<defs><linearGradient id="nite" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E150F"/><stop offset="1" stop-color="#3A281C"/></linearGradient></defs>
+<rect width="540" height="220" fill="url(#nite)"/><circle cx="30" cy="70" r="52" fill="#2F3B22"/><circle cx="110" cy="50" r="46" fill="#36452A"/><circle cx="200" cy="72" r="40" fill="#2F3B22"/><circle cx="330" cy="48" r="54" fill="#36452A"/><circle cx="430" cy="66" r="48" fill="#2F3B22"/><circle cx="510" cy="46" r="50" fill="#36452A"/>
+<rect x="0" y="120" width="540" height="100" fill="#4A3A2C"/>
+<rect x="0" y="100" width="540" height="6" fill="#5A3D2A"/>
+<path d="M-10 10Q135.0 54 280 10" stroke="#F5EEDD" stroke-opacity=".4" stroke-width="1.2" fill="none"/><circle cx="31" cy="27" r="10" fill="#F6C766" opacity=".25"/><circle cx="31" cy="27" r="3.5" fill="#FBD98A"/><circle cx="73" cy="34" r="10" fill="#F6C766" opacity=".25"/><circle cx="73" cy="34" r="3.5" fill="#FBD98A"/><circle cx="114" cy="38" r="10" fill="#F6C766" opacity=".25"/><circle cx="114" cy="38" r="3.5" fill="#FBD98A"/><circle cx="156" cy="38" r="10" fill="#F6C766" opacity=".25"/><circle cx="156" cy="38" r="3.5" fill="#FBD98A"/><circle cx="197" cy="34" r="10" fill="#F6C766" opacity=".25"/><circle cx="197" cy="34" r="3.5" fill="#FBD98A"/><circle cx="239" cy="27" r="10" fill="#F6C766" opacity=".25"/><circle cx="239" cy="27" r="3.5" fill="#FBD98A"/><path d="M240 14Q400.0 66 560 14" stroke="#F5EEDD" stroke-opacity=".4" stroke-width="1.2" fill="none"/><circle cx="280" cy="31" r="10" fill="#F6C766" opacity=".25"/><circle cx="280" cy="31" r="3.5" fill="#FBD98A"/><circle cx="320" cy="40" r="10" fill="#F6C766" opacity=".25"/><circle cx="320" cy="40" r="3.5" fill="#FBD98A"/><circle cx="360" cy="44" r="10" fill="#F6C766" opacity=".25"/><circle cx="360" cy="44" r="3.5" fill="#FBD98A"/><circle cx="400" cy="46" r="10" fill="#F6C766" opacity=".25"/><circle cx="400" cy="46" r="3.5" fill="#FBD98A"/><circle cx="440" cy="44" r="10" fill="#F6C766" opacity=".25"/><circle cx="440" cy="44" r="3.5" fill="#FBD98A"/><circle cx="480" cy="40" r="10" fill="#F6C766" opacity=".25"/><circle cx="480" cy="40" r="3.5" fill="#FBD98A"/><circle cx="520" cy="31" r="10" fill="#F6C766" opacity=".25"/><circle cx="520" cy="31" r="3.5" fill="#FBD98A"/><path d="M-10 40Q275.0 76 560 40" stroke="#F5EEDD" stroke-opacity=".4" stroke-width="1.2" fill="none"/><circle cx="38" cy="51" r="10" fill="#F6C766" opacity=".25"/><circle cx="38" cy="51" r="3.5" fill="#FBD98A"/><circle cx="85" cy="56" r="10" fill="#F6C766" opacity=".25"/><circle cx="85" cy="56" r="3.5" fill="#FBD98A"/><circle cx="132" cy="60" r="10" fill="#F6C766" opacity=".25"/><circle cx="132" cy="60" r="3.5" fill="#FBD98A"/><circle cx="180" cy="62" r="10" fill="#F6C766" opacity=".25"/><circle cx="180" cy="62" r="3.5" fill="#FBD98A"/><circle cx="228" cy="63" r="10" fill="#F6C766" opacity=".25"/><circle cx="228" cy="63" r="3.5" fill="#FBD98A"/><circle cx="275" cy="64" r="10" fill="#F6C766" opacity=".25"/><circle cx="275" cy="64" r="3.5" fill="#FBD98A"/><circle cx="322" cy="64" r="10" fill="#F6C766" opacity=".25"/><circle cx="322" cy="64" r="3.5" fill="#FBD98A"/><circle cx="370" cy="62" r="10" fill="#F6C766" opacity=".25"/><circle cx="370" cy="62" r="3.5" fill="#FBD98A"/><circle cx="418" cy="60" r="10" fill="#F6C766" opacity=".25"/><circle cx="418" cy="60" r="3.5" fill="#FBD98A"/><circle cx="465" cy="56" r="10" fill="#F6C766" opacity=".25"/><circle cx="465" cy="56" r="3.5" fill="#FBD98A"/><circle cx="512" cy="52" r="10" fill="#F6C766" opacity=".25"/><circle cx="512" cy="52" r="3.5" fill="#FBD98A"/>
+<ellipse cx="150" cy="168" rx="120" ry="40" fill="#F6C766" opacity=".1"/><ellipse cx="400" cy="168" rx="120" ry="40" fill="#F6C766" opacity=".1"/>
+<g transform="translate(90 150) scale(1)"><rect x="-13" y="-30" width="26" height="34" rx="12" fill="#9CBF6E"/><circle cx="0" cy="-40" r="10" fill="#C68A5C"/><path d="M-10 -44a10 10 0 0 1 20 0" fill="#2A1D13"/></g><g transform="translate(130 150) scale(1)"><rect x="-13" y="-30" width="26" height="34" rx="12" fill="#EADDB8"/><circle cx="0" cy="-40" r="10" fill="#E0A878"/><path d="M-10 -44a10 10 0 0 1 20 0" fill="#2A1D13"/></g><g transform="translate(175 150) scale(1)"><rect x="-13" y="-30" width="26" height="34" rx="12" fill="#C9A24A"/><circle cx="0" cy="-40" r="10" fill="#8D5A3B"/><path d="M-10 -44a10 10 0 0 1 20 0" fill="#2A1D13"/></g><g transform="translate(215 152) scale(0.75)"><rect x="-13" y="-30" width="26" height="34" rx="12" fill="#7FA65A"/><circle cx="0" cy="-40" r="10" fill="#F0C29A"/><path d="M-10 -44a10 10 0 0 1 20 0" fill="#2A1D13"/></g>
+<rect x="70" y="154" width="170" height="12" rx="3" fill="#B07A4A"/><rect x="80" y="166" width="6" height="30" fill="#8A5A36"/><rect x="224" y="166" width="6" height="30" fill="#8A5A36"/>
+<circle cx="120" cy="152" r="9" fill="#D9994C"/><circle cx="190" cy="152" r="6" fill="#F5EEDD"/><circle cx="104" cy="151" r="3" fill="#D2A64A"/>
+<g transform="translate(110 214) scale(1)"><rect x="-13" y="-30" width="26" height="34" rx="12" fill="#5A3D2A"/><circle cx="0" cy="-40" r="10" fill="#E0A878"/><path d="M-10 -44a10 10 0 0 1 20 0" fill="#2A1D13"/></g><g transform="translate(160 214) scale(1)"><rect x="-13" y="-30" width="26" height="34" rx="12" fill="#9CBF6E"/><circle cx="0" cy="-40" r="10" fill="#C68A5C"/><path d="M-10 -44a10 10 0 0 1 20 0" fill="#2A1D13"/></g><g transform="translate(210 214) scale(0.8)"><rect x="-13" y="-30" width="26" height="34" rx="12" fill="#EADDB8"/><circle cx="0" cy="-40" r="10" fill="#8D5A3B"/><path d="M-10 -44a10 10 0 0 1 20 0" fill="#2A1D13"/></g>
+<g transform="translate(350 150) scale(1)"><rect x="-13" y="-30" width="26" height="34" rx="12" fill="#EADDB8"/><circle cx="0" cy="-40" r="10" fill="#C68A5C"/><path d="M-10 -44a10 10 0 0 1 20 0" fill="#2A1D13"/></g><g transform="translate(395 150) scale(1)"><rect x="-13" y="-30" width="26" height="34" rx="12" fill="#9CBF6E"/><circle cx="0" cy="-40" r="10" fill="#E0A878"/><path d="M-10 -44a10 10 0 0 1 20 0" fill="#2A1D13"/></g><g transform="translate(440 150) scale(1)"><rect x="-13" y="-30" width="26" height="34" rx="12" fill="#5A3D2A"/><circle cx="0" cy="-40" r="10" fill="#F0C29A"/><path d="M-10 -44a10 10 0 0 1 20 0" fill="#2A1D13"/></g>
+<rect x="330" y="154" width="150" height="12" rx="3" fill="#B07A4A"/><rect x="340" y="166" width="6" height="30" fill="#8A5A36"/><rect x="464" y="166" width="6" height="30" fill="#8A5A36"/>
+<circle cx="400" cy="152" r="9" fill="#D9994C"/><circle cx="364" cy="151" r="3" fill="#D2A64A"/>
+<g transform="translate(370 214) scale(1)"><rect x="-13" y="-30" width="26" height="34" rx="12" fill="#C9A24A"/><circle cx="0" cy="-40" r="10" fill="#E0A878"/><path d="M-10 -44a10 10 0 0 1 20 0" fill="#2A1D13"/></g><g transform="translate(420 214) scale(1)"><rect x="-13" y="-30" width="26" height="34" rx="12" fill="#3A281C"/><circle cx="0" cy="-40" r="10" fill="#C68A5C"/><path d="M-10 -44a10 10 0 0 1 20 0" fill="#2A1D13"/></g><g transform="translate(460 214) scale(0.75)"><rect x="-13" y="-30" width="26" height="34" rx="12" fill="#9CBF6E"/><circle cx="0" cy="-40" r="10" fill="#8D5A3B"/><path d="M-10 -44a10 10 0 0 1 20 0" fill="#2A1D13"/></g>
+</symbol>
+  <symbol id="feast" viewBox="0 0 320 210">
+    <rect x="4" y="8" width="312" height="194" rx="24" class="f-cloth"/>
+    <g class="f-check"><path d="M4 60h312M4 110h312M4 160h312M60 8v194M120 8v194M180 8v194M240 8v194"/></g>
+    <use href="#pizza" x="14" y="24" width="160" height="160"/>
+    <use href="#pasta" x="176" y="20" width="96" height="96"/><use href="#pasta" x="186" y="110" width="88" height="88"/>
+    <circle cx="290" cy="52" r="15" class="f-glass"/><circle cx="290" cy="52" r="10" class="f-drink"/><circle cx="287" cy="49" r="2.5" class="f-ice"/><circle cx="292" cy="160" r="15" class="f-glass"/><circle cx="292" cy="160" r="10" class="f-drink"/><circle cx="289" cy="157" r="2.5" class="f-ice"/>
+  </symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Pizzas y Pastas Rochely, inicio">
+      <img src="sello.png" alt="" width="48" height="48">
+      <span><b>Pizzas y Pastas Rochely</b><small>Aquí todos caben</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#menu">Menú</a>
+      <a href="#promociones">Promociones</a>
+      <a href="#pedidos">Pedidos</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#galeria">Galería</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menú de secciones"><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
+  </div>
+  <div class="drawer" id="drawer" hidden>
+    <nav class="wrap" aria-label="Secciones">
+      <a href="#menu">Menú</a>
+      <a href="#promociones">Promociones</a>
+      <a href="#pedidos">Pedidos por WhatsApp</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#galeria">Galería</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#ubicacion">Ubicación y horarios</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <!-- INICIO -->
+  <section class="hero">
+    <svg class="lights" viewBox="0 0 1200 66" preserveAspectRatio="xMidYMin slice" aria-hidden="true"><path d="M0 6 Q100 42 200 6 Q300 42 400 6 Q500 42 600 6 Q700 42 800 6 Q900 42 1000 6 Q1100 42 1200 6 "/><circle class="g" cx="50" cy="28" r="11"/><circle class="b" cx="50" cy="28" r="3.6"/><circle class="g" cx="150" cy="28" r="11"/><circle class="b" cx="150" cy="28" r="3.6"/><circle class="g" cx="250" cy="28" r="11"/><circle class="b" cx="250" cy="28" r="3.6"/><circle class="g" cx="350" cy="28" r="11"/><circle class="b" cx="350" cy="28" r="3.6"/><circle class="g" cx="450" cy="28" r="11"/><circle class="b" cx="450" cy="28" r="3.6"/><circle class="g" cx="550" cy="28" r="11"/><circle class="b" cx="550" cy="28" r="3.6"/><circle class="g" cx="650" cy="28" r="11"/><circle class="b" cx="650" cy="28" r="3.6"/><circle class="g" cx="750" cy="28" r="11"/><circle class="b" cx="750" cy="28" r="3.6"/><circle class="g" cx="850" cy="28" r="11"/><circle class="b" cx="850" cy="28" r="3.6"/><circle class="g" cx="950" cy="28" r="11"/><circle class="b" cx="950" cy="28" r="3.6"/><circle class="g" cx="1050" cy="28" r="11"/><circle class="b" cx="1050" cy="28" r="3.6"/><circle class="g" cx="1150" cy="28" r="11"/><circle class="b" cx="1150" cy="28" r="3.6"/></svg>
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Cancún · SM 216 · Pizzas y pastas</p>
+        <h1>Pizza recién horneada y pasta al momento. <em>Aquí todos caben.</em></h1>
+        <p class="lead">Cocinamos para la mesa grande: la familia del domingo, los niños con su mini pizza, el cumpleaños de la tía y la cena con amigos. Revisa la carta y pídenos por WhatsApp.</p>
+        <div class="ctas">
+          <a class="btn btn-pista" href="#menu">Ver el menú</a>
+          <a class="btn btn-wa" data-wa="Hola Rochely, quiero hacer un pedido." href="#pedidos" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Pedir por WhatsApp</a>
+        </div>
+        <p class="status" id="status"><i></i><span id="status-text">Abierto todos los días de 12:00 p. m. a 1:00 a. m.</span></p>
+      </div>
+      <div class="hero-art">
+        <svg role="img" aria-label="Pizza de pepperoni sobre tabla de madera"><use href="#pizza"/></svg>
+        <img src="sello.png" alt="Logotipo RA de Rochely" width="120" height="120">
+      </div>
+      <div class="facts">
+        <div class="fact"><svg aria-hidden="true"><use href="#i-clock"/></svg><div><b>12:00 p. m. a 1:00 a. m.</b><span>Comida, cena y antojo de medianoche</span></div></div>
+        <div class="fact"><svg aria-hidden="true"><use href="#i-pin"/></svg><div><b>Av. Chac Mool, SM 216</b><span>Entre Av. 20 de Noviembre y Niños Héroes</span></div></div>
+        <div class="fact"><svg aria-hidden="true"><use href="#i-chat"/></svg><div><b>WhatsApp 984 216 9707</b><span>Pedidos, reservaciones y banquetes</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMOCIONES -->
+  <section class="block" id="promociones">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Promociones</p><h2>Combos Rochely</h2></div>
+        <p>Para dos, para los amantes de la pasta o para toda la familia. Agrégalos a tu pedido o pídelos directo por WhatsApp.</p>
+      </div>
+      <div class="promos">
+        <article class="promo">
+          <div class="row"><h3>Combo Pareja</h3><span class="cprice">$279</span></div>
+          <p>Pizza Pepperoni Clásica + 2 limonadas naturales.</p>
+          <div class="actions"><button class="btn btn-line" type="button" data-add="Combo Pareja" data-price="279">Agregar al pedido</button></div>
+        </article>
+        <article class="promo">
+          <div class="row"><h3>Pasta Lovers</h3><span class="cprice">$399</span></div>
+          <p>2 pastas a elegir + 2 limonadas naturales.</p>
+          <div class="actions"><button class="btn btn-line" type="button" data-add="Pasta Lovers" data-price="399">Agregar al pedido</button></div>
+        </article>
+        <article class="promo feature">
+          <span class="ribbon">Para la familia</span>
+          <div class="row"><h3>Combo Familiar</h3><span class="cprice">$499</span></div>
+          <p>2 pizzas clásicas + pan de ajo + 4 refrescos.</p>
+          <div class="actions"><button class="btn btn-line" type="button" data-add="Combo Familiar" data-price="499">Agregar al pedido</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENÚ -->
+  <section class="block alt" id="menu">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Menú</p><h2>La carta</h2></div>
+        <p>Precios en pesos mexicanos (MXN). Toca <b>+</b> para ir armando tu pedido y al final lo envías por WhatsApp.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Categorías del menú">
+        <button class="tab" role="tab" id="t-pizzas" aria-selected="true" aria-controls="p-pizzas">Pizzas</button>
+        <button class="tab" role="tab" id="t-pastas" aria-selected="false" aria-controls="p-pastas">Pastas</button>
+        <button class="tab" role="tab" id="t-entradas" aria-selected="false" aria-controls="p-entradas">Entradas</button>
+        <button class="tab kids" role="tab" id="t-ninos" aria-selected="false" aria-controls="p-ninos">Menú infantil</button>
+        <button class="tab" role="tab" id="t-postres" aria-selected="false" aria-controls="p-postres">Postres</button>
+        <button class="tab" role="tab" id="t-bebidas" aria-selected="false" aria-controls="p-bebidas">Bebidas</button>
+      </div>
+
+      <div class="menu" role="tabpanel" id="p-pizzas" aria-labelledby="t-pizzas">
+        <p class="size">Tamaño mediano</p>
+        <div class="dish" data-name="Margherita Rochely" data-price="179"><div class="row"><h3>Margherita Rochely <span class="tag">De la casa</span></h3><span class="dots"></span><span class="price">$179</span></div><p>Salsa de tomate, mozzarella y albahaca.</p></div>
+        <div class="dish" data-name="Pepperoni Clásica" data-price="199"><div class="row"><h3>Pepperoni Clásica</h3><span class="dots"></span><span class="price">$199</span></div><p>Pepperoni y mozzarella sobre salsa de tomate.</p></div>
+        <div class="dish" data-name="Cuatro Quesos" data-price="229"><div class="row"><h3>Cuatro Quesos</h3><span class="dots"></span><span class="price">$229</span></div><p>Mezcla de quesos sobre base cremosa.</p></div>
+        <div class="dish" data-name="Prosciutto y Champiñones" data-price="219"><div class="row"><h3>Prosciutto y Champiñones</h3><span class="dots"></span><span class="price">$219</span></div><p>Prosciutto, champiñones y mozzarella.</p></div>
+        <div class="dish" data-name="Suprema Rochely" data-price="239"><div class="row"><h3>Suprema Rochely <span class="tag">De la casa</span></h3><span class="dots"></span><span class="price">$239</span></div><p>Combinación de carnes y vegetales.</p></div>
+        <div class="dish" data-name="BBQ Chicken" data-price="229"><div class="row"><h3>BBQ Chicken</h3><span class="dots"></span><span class="price">$229</span></div><p>Pollo, salsa BBQ y mozzarella.</p></div>
+      </div>
+
+      <div class="menu" role="tabpanel" id="p-pastas" aria-labelledby="t-pastas" hidden>
+        <div class="dish" data-name="Fettuccine Alfredo" data-price="179"><div class="row"><h3>Fettuccine Alfredo</h3><span class="dots"></span><span class="price">$179</span></div><p>Pasta en salsa cremosa de queso.</p></div>
+        <div class="dish" data-name="Spaghetti Bolognesa" data-price="199"><div class="row"><h3>Spaghetti Bolognesa</h3><span class="dots"></span><span class="price">$199</span></div><p>Salsa de carne estilo tradicional.</p></div>
+        <div class="dish" data-name="Penne Arrabbiata" data-price="169"><div class="row"><h3>Penne Arrabbiata <span class="tag">Picosa</span></h3><span class="dots"></span><span class="price">$169</span></div><p>Salsa de tomate con toque picante.</p></div>
+        <div class="dish" data-name="Fettuccine con Pollo" data-price="219"><div class="row"><h3>Fettuccine con Pollo</h3><span class="dots"></span><span class="price">$219</span></div><p>Pasta cremosa con pollo.</p></div>
+        <div class="dish" data-name="Lasaña Rochely" data-price="229"><div class="row"><h3>Lasaña Rochely <span class="tag">De la casa</span></h3><span class="dots"></span><span class="price">$229</span></div><p>Capas de pasta, salsa y queso gratinado.</p></div>
+      </div>
+
+      <div class="menu" role="tabpanel" id="p-entradas" aria-labelledby="t-entradas" hidden>
+        <div class="dish" data-name="Pan de ajo" data-price="89"><div class="row"><h3>Pan de ajo</h3><span class="dots"></span><span class="price">$89</span></div><p>Pan horneado con ajo y mantequilla.</p></div>
+        <div class="dish" data-name="Mozzarella sticks" data-price="119"><div class="row"><h3>Mozzarella sticks</h3><span class="dots"></span><span class="price">$119</span></div><p>Bastones de queso empanizados.</p></div>
+        <div class="dish" data-name="Bruschettas" data-price="99"><div class="row"><h3>Bruschettas</h3><span class="dots"></span><span class="price">$99</span></div><p>Pan tostado con topping fresco.</p></div>
+        <div class="dish" data-name="Alitas BBQ" data-price="149"><div class="row"><h3>Alitas BBQ</h3><span class="dots"></span><span class="price">$149</span></div><p>Alitas bañadas en salsa BBQ.</p></div>
+      </div>
+
+      <div class="menu" role="tabpanel" id="p-ninos" aria-labelledby="t-ninos" hidden>
+        <div class="kids-panel">
+          <svg role="img" aria-label="Rebanada de pizza"><use href="#slice"/></svg>
+          <div><h3>La mesa de los peques</h3><p>Pizzas tamaño personal, sin picante y con masa suavecita. Pide tu hoja para colorear y crayones en el local.</p></div>
+        </div>
+        <p class="size kids-h">Pizzas para peques</p>
+        <div class="dish" data-name="Mini Quesosa (infantil)" data-price="95"><div class="row"><h3>Mini Quesosa</h3><span class="dots"></span><span class="price">$95</span></div><p>Mozzarella y salsa de tomate suave. La que nunca falla.</p></div>
+        <div class="dish" data-name="Pizza Pecas (infantil)" data-price="105"><div class="row"><h3>Pizza Pecas</h3><span class="dots"></span><span class="price">$105</span></div><p>Mini pepperonis repartidos como pecas sobre mozzarella.</p></div>
+        <div class="dish" data-name="Pizza Jardín (infantil)" data-price="119"><div class="row"><h3>Pizza Jardín</h3><span class="dots"></span><span class="price">$119</span></div><p>Pollo, elote y verduritas picadas, con mozzarella.</p></div>
+        <div class="dish" data-name="Mini Isleña (infantil)" data-price="109"><div class="row"><h3>Mini Isleña <span class="tag">Sabor Cancún</span></h3><span class="dots"></span><span class="price">$109</span></div><p>Piña y jamón en cuadritos, con mozzarella.</p></div>
+        <p class="size kids-h">Pasta, postre y bebida</p>
+        <div class="dish" data-name="Spaghetti a la mantequilla (infantil)" data-price="89"><div class="row"><h3>Spaghetti a la mantequilla</h3><span class="dots"></span><span class="price">$89</span></div><p>Con queso parmesano, sencillo y suave.</p></div>
+        <div class="dish" data-name="Mini brownie con helado (infantil)" data-price="65"><div class="row"><h3>Mini brownie con helado</h3><span class="dots"></span><span class="price">$65</span></div><p>Media porción de nuestro brownie con una bola de helado.</p></div>
+        <div class="dish" data-name="Limonada chica (infantil)" data-price="35"><div class="row"><h3>Limonada chica</h3><span class="dots"></span><span class="price">$35</span></div><p>Natural, preparada al momento.</p></div>
+        <p class="menu-note" style="grid-column:1/-1">Para niños de hasta 10 años. Todas las porciones infantiles se sirven sin picante.</p>
+      </div>
+
+      <div class="menu" role="tabpanel" id="p-postres" aria-labelledby="t-postres" hidden>
+        <div class="dish" data-name="Tiramisú" data-price="99"><div class="row"><h3>Tiramisú</h3><span class="dots"></span><span class="price">$99</span></div><p>Postre clásico de café.</p></div>
+        <div class="dish" data-name="Cheesecake" data-price="95"><div class="row"><h3>Cheesecake</h3><span class="dots"></span><span class="price">$95</span></div><p>Rebanada de pastel de queso.</p></div>
+        <div class="dish" data-name="Brownie con helado" data-price="109"><div class="row"><h3>Brownie con helado</h3><span class="dots"></span><span class="price">$109</span></div><p>Brownie acompañado de helado.</p></div>
+      </div>
+
+      <div class="menu" role="tabpanel" id="p-bebidas" aria-labelledby="t-bebidas" hidden>
+        <div class="dish" data-name="Limonada natural" data-price="49"><div class="row"><h3>Limonada natural</h3><span class="dots"></span><span class="price">$49</span></div><p>Preparada al momento.</p></div>
+        <div class="dish" data-name="Limonada mineral" data-price="59"><div class="row"><h3>Limonada mineral</h3><span class="dots"></span><span class="price">$59</span></div><p>Limonada con agua mineral.</p></div>
+        <div class="dish" data-name="Refresco" data-price="39"><div class="row"><h3>Refresco</h3><span class="dots"></span><span class="price">$39</span></div><p>Pregunta por las opciones disponibles.</p></div>
+        <div class="dish" data-name="Té helado" data-price="45"><div class="row"><h3>Té helado</h3><span class="dots"></span><span class="price">$45</span></div><p>Bebida fría de la casa.</p></div>
+      </div>
+
+      <p class="menu-note">Los ingredientes pueden ajustarse según disponibilidad. Consulta al equipo por alérgenos.</p>
+    </div>
+  </section>
+
+  <!-- PEDIDOS -->
+  <section class="block" id="pedidos">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Pedidos por WhatsApp</p><h2>Pide en tres pasos</h2></div>
+        <p>Tu pedido llega a nuestro WhatsApp ya escrito. Te confirmamos el total y el tiempo de entrega.</p>
+      </div>
+      <div class="order">
+        <ol class="steps">
+          <li><div><b>Elige en el menú</b><span>Toca <b>+</b> en cada platillo o combo que quieras.</span></div></li>
+          <li><div><b>Revisa tu pedido</b><span>Ajusta cantidades, dinos tu nombre y cómo lo quieres recibir.</span></div></li>
+          <li><div><b>Envíalo por WhatsApp</b><span>Se abre el chat con 984 216 9707 y tu pedido listo para mandar.</span></div></li>
+        </ol>
+        <form class="ticket" id="order-form" novalidate>
+          <h3>Tu pedido</h3>
+          <ul class="lines" id="lines"></ul>
+          <p class="empty" id="empty">Aún no agregas nada. <a href="#menu">Ir al menú</a></p>
+          <div class="total"><span>Total aproximado</span><b id="total">$0</b></div>
+          <p class="fine" id="pending-note" hidden>Los platillos marcados "Consultar" se cotizan al confirmar.</p>
+          <div class="fields">
+            <label for="o-name">Nombre<input id="o-name" name="name" autocomplete="name" placeholder="¿A nombre de quién?"></label>
+            <fieldset class="seg" style="border:0;padding:0;margin:0">
+              <legend class="fine" style="font-weight:700;color:var(--ink);margin-bottom:8px">¿Cómo lo quieres?</legend>
+              <label for="o-m1"><input type="radio" id="o-m1" name="mode" value="Paso a recogerlo al local" checked>Para recoger</label>
+              <label for="o-m2"><input type="radio" id="o-m2" name="mode" value="Comer en el local">Comer en el local</label>
+              <label for="o-m3"><input type="radio" id="o-m3" name="mode" value="A domicilio">A domicilio</label>
+            </fieldset>
+            <label for="o-addr" id="addr-wrap" hidden>Dirección de entrega<input id="o-addr" name="addr" autocomplete="street-address" placeholder="Calle, número, SM y referencias"></label>
+            <label for="o-notes">Notas<textarea id="o-notes" name="notes" placeholder="Sin cebolla, orilla bien dorada, a qué hora pasas…"></textarea></label>
+          </div>
+          <button class="btn btn-wa" type="submit"><svg aria-hidden="true"><use href="#wa"/></svg>Enviar pedido por WhatsApp</button>
+          <p class="fine">El total es aproximado; te lo confirmamos por WhatsApp junto con el costo de envío, si aplica.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTOS -->
+  <section class="block alt" id="eventos">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Eventos</p><h2>Cumpleaños, reuniones y oficinas</h2></div>
+        <p>Armamos la mesa para tu fiesta familiar o tu equipo de trabajo. Dinos cuántos son y la fecha.</p>
+      </div>
+
+      <div class="feast">
+        <svg class="lights" viewBox="0 0 1200 50" preserveAspectRatio="xMidYMin slice" aria-hidden="true"><path d="M0 6 Q120 26 240 6 Q360 26 480 6 Q600 26 720 6 Q840 26 960 6 Q1080 26 1200 6 "/><circle class="g" cx="60" cy="22" r="11"/><circle class="b" cx="60" cy="22" r="3.6"/><circle class="g" cx="180" cy="22" r="11"/><circle class="b" cx="180" cy="22" r="3.6"/><circle class="g" cx="300" cy="22" r="11"/><circle class="b" cx="300" cy="22" r="3.6"/><circle class="g" cx="420" cy="22" r="11"/><circle class="b" cx="420" cy="22" r="3.6"/><circle class="g" cx="540" cy="22" r="11"/><circle class="b" cx="540" cy="22" r="3.6"/><circle class="g" cx="660" cy="22" r="11"/><circle class="b" cx="660" cy="22" r="3.6"/><circle class="g" cx="780" cy="22" r="11"/><circle class="b" cx="780" cy="22" r="3.6"/><circle class="g" cx="900" cy="22" r="11"/><circle class="b" cx="900" cy="22" r="3.6"/><circle class="g" cx="1020" cy="22" r="11"/><circle class="b" cx="1020" cy="22" r="3.6"/><circle class="g" cx="1140" cy="22" r="11"/><circle class="b" cx="1140" cy="22" r="3.6"/></svg>
+        <svg class="feast-art" role="img" aria-label="Banquete familiar con pizza, pastas y bebidas"><use href="#feast"/></svg>
+        <div>
+          <p class="eyebrow">El favorito de la casa</p>
+          <h3>Banquete familiar para 8 personas</h3>
+          <ul><li>2 pizzas</li><li>3 pastas</li><li>2 refrescos</li><li>2 postres</li></ul>
+          <a class="btn btn-wa" data-wa="Hola Rochely, quiero reservar el banquete familiar para 8 personas." href="#pedidos" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Reservar banquete</a>
+        </div>
+        <div class="big">$400<small>Cada ingrediente extra +15 %. Nunca pasa de $600.</small></div>
+      </div>
+
+      <div class="plans">
+        <article class="plan">
+          <span class="who">Hasta 8 personas</span>
+          <h3>Junta de trabajo</h3>
+          <p class="cost">$400 <small>MXN</small></p>
+          <ul><li>2 pizzas y 3 pastas</li><li>2 refrescos y 2 postres</li><li>Ingrediente extra +15 % (máx. $600)</li></ul>
+          <a class="btn btn-line" data-wa="Hola Rochely, me interesa el paquete Junta de trabajo (8 personas)." href="#pedidos" target="_blank" rel="noopener">Pedir este paquete</a>
+        </article>
+        <article class="plan featured">
+          <span class="ribbon">El más pedido</span>
+          <span class="who">Hasta 16 personas</span>
+          <h3>Comida de equipo</h3>
+          <p class="cost">$800 <small>MXN</small></p>
+          <ul><li>2 banquetes familiares</li><li>4 pizzas y 6 pastas</li><li>4 refrescos y 4 postres</li><li>Platos, cubiertos y servilletas</li><li>Entrega en tu oficina</li></ul>
+          <a class="btn btn-wa" data-wa="Hola Rochely, me interesa el paquete Comida de equipo (16 personas)." href="#pedidos" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>Cotizar por WhatsApp</a>
+        </article>
+        <article class="plan">
+          <span class="who">De 24 a 60 personas</span>
+          <h3>Evento grande</h3>
+          <p class="cost">A cotizar</p>
+          <ul><li>Menú armado a tu medida</li><li>Bebidas y postres por persona</li><li>Montaje y entrega programada</li><li>Factura disponible</li></ul>
+          <a class="btn btn-line" data-wa="Hola Rochely, quiero cotizar un evento grande." href="#pedidos" target="_blank" rel="noopener">Pedir cotización</a>
+        </article>
+      </div>
+      <div class="rules">
+        <span><b>Reserva:</b> con 3 días de anticipación</span>
+        <span><b>Anticipo:</b> 30 % del total para confirmar</span>
+        <span><b>Refrescos:</b> cambia el sabor sin costo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="block" id="galeria">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Galería</p><h2>Lo que sale del horno</h2></div>
+        <p>Madera, luz cálida y mesas grandes: así se vive una cena en Rochely.</p>
+      </div>
+      <div class="gallery">
+        <figure class="big"><svg class="scene" role="img" aria-label="Fachada de Rochely: letrero café con letras doradas y el sello RA, toldo verde pistache que dice Pizzas y Pastas, puerta en arco con luz cálida y letrero de calle Av. Chac Mool" preserveAspectRatio="xMidYMid slice"><use href="#sc-fachada" width="100%" height="100%"/></svg><figcaption>Bienvenidos</figcaption></figure>
+        <figure ><svg class="scene" role="img" aria-label="Manos de una familia tomando rebanadas de una pizza al centro de la mesa" preserveAspectRatio="xMidYMid slice"><use href="#sc-mesa" width="100%" height="100%"/></svg><figcaption>Para compartir</figcaption></figure>
+        
+        <figure><svg class="scene" role="img" aria-label="Salón con paredes de madera, banca de piel y mesas puestas" preserveAspectRatio="xMidYMid slice"><use href="#sc-salon" width="100%" height="100%"/></svg><figcaption>Cena en familia</figcaption></figure>
+        <figure class="wide"><svg class="scene" role="img" aria-label="Mesas al aire libre bajo una guirnalda de foquitos" preserveAspectRatio="xMidYMid slice"><use href="#sc-terraza" width="100%" height="100%"/></svg><figcaption>Noches de foquitos</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section class="block alt" id="nosotros">
+    <div class="wrap">
+      <div class="about">
+        <div class="story">
+          <p class="eyebrow">Nosotros</p>
+          <h2 style="font-size:clamp(1.9rem, 4.5vw, 2.7rem);font-weight:600">Una pizzería de barrio con alma de comedor familiar</h2>
+          <p>Todo sale de nuestra cocina el mismo día: la masa, las salsas y los gratinados. Cocinamos para compartir, con porciones generosas y precios pensados para que venga toda la familia.</p>
+          <p class="quote">“Aquí todos caben.”</p>
+        </div>
+        <div class="pillars">
+          <article class="pillar"><svg role="img" aria-label="Pizza"><use href="#pizza"/></svg><div><h3>Pizzas horneadas al momento</h3><p>Seis recetas, de la Margherita clásica a la Suprema Rochely, con mozzarella que se estira.</p></div></article>
+          <article class="pillar"><svg role="img" aria-label="Pasta"><use href="#pasta"/></svg><div><h3>Salsas de la casa</h3><p>Bolognesa tradicional, alfredo cremoso, arrabbiata con su toque picante y lasaña gratinada.</p></div></article>
+          <article class="pillar"><svg role="img" aria-label="Rebanada de pizza"><use href="#slice"/></svg><div><h3>Familias bienvenidas</h3><p>Menú infantil, mesas grandes y banquetes para que nadie se quede fuera.</p></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPINIONES -->
+  <section class="block" id="opiniones">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Sugerencias y calificaciones</p><h2>¿Cómo te fue con nosotros?</h2></div>
+        <p>Tu opinión nos ayuda a mejorar cada pizza. Califícanos y cuéntanos qué cambiarías.</p>
+      </div>
+      <div class="reviews">
+        <div class="gcard">
+          <span class="stars-static" aria-hidden="true">★★★★★</span>
+          <h3>Déjanos tu reseña en Google</h3>
+          <p>Si te gustó, una reseña ayuda a que más familias de Cancún nos encuentren.</p>
+          <a class="btn btn-pista" style="justify-self:start" href="https://www.google.com/maps/search/?api=1&amp;query=Pizzas%20y%20Pastas%20Rochely%20Canc%C3%BAn" target="_blank" rel="noopener">Calificar en Google</a>
+        </div>
+        <form class="ticket" id="tip-form" novalidate>
+          <h3>Envíanos una sugerencia</h3>
+          <fieldset class="stars" id="stars">
+            <legend>Tu calificación</legend>
+            <input type="radio" name="stars" id="s1" value="1"><label for="s1" aria-label="1 estrella">★</label>
+            <input type="radio" name="stars" id="s2" value="2"><label for="s2" aria-label="2 estrellas">★</label>
+            <input type="radio" name="stars" id="s3" value="3"><label for="s3" aria-label="3 estrellas">★</label>
+            <input type="radio" name="stars" id="s4" value="4"><label for="s4" aria-label="4 estrellas">★</label>
+            <input type="radio" name="stars" id="s5" value="5"><label for="s5" aria-label="5 estrellas">★</label>
+          </fieldset>
+          <label for="t-name">Nombre (opcional)<input id="t-name" autocomplete="name"></label>
+          <label for="t-msg">Tu sugerencia<textarea id="t-msg" placeholder="¿Qué te gustó? ¿Qué mejorarías?"></textarea></label>
+          <button class="btn btn-wa" type="submit" style="justify-self:start"><svg aria-hidden="true"><use href="#wa"/></svg>Enviar por WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section class="block alt" id="ubicacion">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Ubicación y horarios</p><h2>Ven a visitarnos</h2></div>
+      </div>
+      <div class="where">
+        <div class="info">
+          <div>
+            <h3>Pizzas y Pastas Rochely</h3>
+            <p class="addr">Av. Chac Mool, entre Av. 20 de Noviembre y Av. Niños Héroes, SM 216, Cancún, Q. Roo</p>
+          </div>
+          <table class="hours">
+            <tbody>
+              <tr><td>Lunes a domingo</td><td>12:00 p. m. – 1:00 a. m.</td></tr>
+            </tbody>
+          </table>
+          <div class="phone"><span id="phone-text">984 216 9707</span><button class="copy" id="copy-btn" type="button">Copiar número</button></div>
+          <div class="btnrow">
+            <a class="btn btn-pista" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Chac%20Mool%2C%20SM%20216%2C%20Canc%C3%BAn%2C%20Quintana%20Roo" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Cómo llegar</a>
+            <a class="btn btn-line" href="tel:+529842169707">Llamar</a>
+            <a class="btn btn-wa" data-wa="Hola Rochely, ¿me ayudan con la ubicación?" href="#ubicacion" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
+          </div>
+        </div>
+        <figure class="spot"><svg viewBox="0 0 400 300" role="img" aria-label="Fachada de Rochely para reconocer el local"><use href="#sc-fachada" width="400" height="300"/></svg><figcaption>Busca el letrero café con letras doradas y el toldo verde pistache.</figcaption></figure>
+          <svg viewBox="0 0 480 300" role="img" aria-label="Croquis: Rochely sobre Av. Chac Mool, entre Av. 20 de Noviembre y Av. Niños Héroes">
+            <rect width="480" height="300" class="m-block" rx="12"/>
+            <rect x="0" y="130" width="480" height="40" class="m-main"/>
+            <rect x="96" y="0" width="30" height="300" class="m-road"/>
+            <rect x="354" y="0" width="30" height="300" class="m-road"/>
+            <rect x="0" y="40" width="480" height="14" class="m-road"/>
+            <rect x="0" y="246" width="480" height="14" class="m-road"/>
+            <text x="240" y="155" text-anchor="middle" class="m-mainlbl">AV. CHAC MOOL</text>
+            <text x="111" y="96" text-anchor="middle" class="m-lbl" transform="rotate(-90 111 96)">AV. 20 DE NOVIEMBRE</text>
+            <text x="369" y="96" text-anchor="middle" class="m-lbl" transform="rotate(-90 369 96)">AV. NIÑOS HÉROES</text>
+            <text x="240" y="216" text-anchor="middle" class="m-lbl">SM 216</text>
+            <path d="M240 124c-14 0-24-10-24-23 0-17 24-41 24-41s24 24 24 41c0 13-10 23-24 23Z" class="m-pin"/>
+            <circle cx="240" cy="100" r="8" class="m-pindot"/>
+            <rect x="268" y="72" width="88" height="28" rx="14" class="m-tag"/>
+            <text x="312" y="91" text-anchor="middle" class="m-tagtxt">Rochely</text>
+          </svg>
+          <p>Croquis de referencia, no está a escala. Usa "Cómo llegar" para la ruta exacta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="sello.png" alt="Logotipo de Rochely" width="64" height="64">
+    <div>
+      <b>Pizzas y Pastas Rochely</b>
+      <p>Av. Chac Mool, SM 216, Cancún · 12:00 p. m. a 1:00 a. m. · WhatsApp 984 216 9707</p>
+      <p>© 2026 Pizzas y Pastas Rochely · Aquí todos caben.</p>
+    </div>
+    <nav aria-label="Pie de página">
+      <a href="#menu">Menú</a><a href="#pedidos">Pedidos</a><a href="#eventos">Eventos</a><a href="#ubicacion">Ubicación</a>
+    </nav>
+  </div>
+</footer>
+
+<a class="wa-float" id="wa-float" data-wa="Hola Rochely, quiero hacer un pedido." href="#pedidos" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg aria-hidden="true"><use href="#wa"/></svg><span>WhatsApp</span>
+</a>
+
+<div class="cartbar" id="cartbar" hidden>
+  <div class="wrap">
+    <p class="sum"><span id="cb-count">0 productos</span> · <b id="cb-total">$0</b></p>
+    <a class="btn btn-pista" href="#pedidos">Revisar y enviar</a>
+  </div>
+</div>
+
+<script>
+// ✏️ Número de WhatsApp: código de país (52) + 10 dígitos, sin espacios.
+const WHATSAPP = "529842169707";
+const PHONE_LABEL = "984 216 9707";
+const waLink = t => "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(t);
+function openWA(t){ const a = document.createElement("a"); a.href = waLink(t); a.target = "_blank"; a.rel = "noopener"; document.body.appendChild(a); a.click(); a.remove(); }
+const money = n => "$" + n.toLocaleString("es-MX");
+
+document.querySelectorAll("[data-wa]").forEach(a => { a.href = waLink(a.dataset.wa); });
+
+/* Menú móvil */
+const menuBtn = document.getElementById("menu-btn"), drawer = document.getElementById("drawer");
+menuBtn.addEventListener("click", () => {
+  const open = drawer.hidden; drawer.hidden = !open; menuBtn.setAttribute("aria-expanded", open);
+});
+drawer.addEventListener("click", e => { if (e.target.closest("a")) { drawer.hidden = true; menuBtn.setAttribute("aria-expanded", false); } });
+
+/* Abierto ahora (hora de Cancún) */
+(function(){
+  try {
+    const parts = new Intl.DateTimeFormat("en-US",{timeZone:"America/Cancun",hour:"numeric",minute:"numeric",hourCycle:"h23"}).formatToParts(new Date());
+    const h = +parts.find(p=>p.type==="hour").value;
+    const open = h >= 12 || h < 1;
+    const el = document.getElementById("status");
+    document.getElementById("status-text").textContent = open
+      ? "Abierto ahora · cerramos a la 1:00 a. m."
+      : "Cerrado ahora · abrimos hoy a las 12:00 p. m.";
+    el.classList.toggle("closed", !open);
+  } catch(e) {}
+})();
+
+/* Pestañas del menú */
+const tabs = [...document.querySelectorAll(".tab")];
+function selectTab(t){
+  tabs.forEach(o => {
+    const on = o === t;
+    o.setAttribute("aria-selected", on); o.tabIndex = on ? 0 : -1;
+    document.getElementById(o.getAttribute("aria-controls")).hidden = !on;
+  });
+}
+tabs.forEach((t,i) => {
+  t.addEventListener("click", () => selectTab(t));
+  t.addEventListener("keydown", e => {
+    const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+    if (d) { const n = tabs[(i + d + tabs.length) % tabs.length]; selectTab(n); n.focus(); }
+  });
+});
+
+/* Pedido */
+const cart = new Map();
+function add(name, price){
+  const it = cart.get(name) || {name, price, qty:0};
+  it.qty++; cart.set(name, it); render();
+}
+document.querySelectorAll(".dish[data-name]").forEach(d => {
+  const b = document.createElement("button");
+  b.type = "button"; b.className = "add"; b.textContent = "+";
+  b.setAttribute("aria-label", "Agregar " + d.querySelector("h3").firstChild.textContent.trim() + " al pedido");
+  b.addEventListener("click", () => { add(d.dataset.name, d.dataset.price ? +d.dataset.price : null); flash(b); });
+  d.querySelector(".row").appendChild(b);
+});
+document.querySelectorAll("[data-add]").forEach(b => b.addEventListener("click", () => {
+  add(b.dataset.add, +b.dataset.price);
+  const t = b.textContent; b.textContent = "Agregado ✓"; setTimeout(() => b.textContent = t, 1400);
+}));
+function flash(b){ b.classList.add("ok"); b.textContent = "✓"; setTimeout(() => { b.classList.remove("ok"); b.textContent = "+"; }, 900); }
+
+const lines = document.getElementById("lines");
+function totals(){
+  let n = 0, sum = 0, pending = false;
+  cart.forEach(it => { n += it.qty; if (it.price == null) pending = true; else sum += it.price * it.qty; });
+  return {n, sum, pending};
+}
+function render(){
+  lines.innerHTML = "";
+  cart.forEach(it => {
+    const li = document.createElement("li");
+    li.innerHTML = '<div class="nm"></div><div class="qty"><button type="button" aria-label="Quitar uno">−</button><span></span><button type="button" aria-label="Agregar uno">+</button></div><div class="sub"></div>';
+    li.querySelector(".nm").innerHTML = "<b></b><small></small>";
+    li.querySelector(".nm b").textContent = it.name;
+    li.querySelector(".nm small").textContent = it.price == null ? "Precio por confirmar" : money(it.price) + " c/u";
+    li.querySelector(".qty span").textContent = it.qty;
+    li.querySelector(".sub").textContent = it.price == null ? "—" : money(it.price * it.qty);
+    const [minus, plus] = li.querySelectorAll(".qty button");
+    minus.onclick = () => { it.qty--; if (!it.qty) cart.delete(it.name); render(); };
+    plus.onclick = () => { it.qty++; render(); };
+    lines.appendChild(li);
+  });
+  const {n, sum, pending} = totals();
+  document.getElementById("empty").hidden = n > 0;
+  document.getElementById("total").textContent = money(sum);
+  document.getElementById("pending-note").hidden = !pending;
+  document.getElementById("cartbar").hidden = n === 0;
+  document.getElementById("wa-float").hidden = n > 0;
+  document.getElementById("cb-count").textContent = n + (n === 1 ? " producto" : " productos");
+  document.getElementById("cb-total").textContent = money(sum) + (pending ? " +" : "");
+}
+render();
+
+const addrWrap = document.getElementById("addr-wrap");
+document.querySelectorAll('input[name="mode"]').forEach(r => r.addEventListener("change", () => {
+  addrWrap.hidden = document.querySelector('input[name="mode"]:checked').value !== "A domicilio";
+}));
+
+document.getElementById("order-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const {n, sum, pending} = totals();
+  let msg = "Hola Rochely, quiero hacer un pedido:\n";
+  if (n) {
+    cart.forEach(it => { msg += "• " + it.qty + " × " + it.name + (it.price == null ? " (precio por confirmar)" : " (" + money(it.price * it.qty) + ")") + "\n"; });
+    msg += "Total aproximado: " + money(sum) + (pending ? " + platillos por confirmar" : "") + "\n";
+  } else {
+    msg += "(Todavía no elijo, ¿me ayudan?)\n";
+  }
+  const name = document.getElementById("o-name").value.trim();
+  const mode = document.querySelector('input[name="mode"]:checked').value;
+  const addr = document.getElementById("o-addr").value.trim();
+  const notes = document.getElementById("o-notes").value.trim();
+  if (name) msg += "Nombre: " + name + "\n";
+  msg += "Entrega: " + mode + (mode === "A domicilio" && addr ? " — " + addr : "") + "\n";
+  if (notes) msg += "Notas: " + notes;
+  openWA(msg.trim());
+});
+
+/* Calificación */
+const starLabels = [...document.querySelectorAll("#stars label")];
+document.querySelectorAll('#stars input').forEach((r,i) => r.addEventListener("change", () => {
+  starLabels.forEach((l,j) => l.classList.toggle("on", j <= i));
+}));
+document.getElementById("tip-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const s = document.querySelector('#stars input:checked');
+  const name = document.getElementById("t-name").value.trim();
+  const txt = document.getElementById("t-msg").value.trim();
+  let msg = "Hola Rochely, les dejo mi opinión.\n";
+  if (s) msg += "Calificación: " + "★".repeat(+s.value) + "☆".repeat(5 - s.value) + " (" + s.value + "/5)\n";
+  if (name) msg += "Nombre: " + name + "\n";
+  if (txt) msg += "Sugerencia: " + txt;
+  openWA(msg.trim());
+});
+
+/* Copiar número */
+const copyBtn = document.getElementById("copy-btn");
+copyBtn.addEventListener("click", () => {
+  const done = () => { copyBtn.textContent = "Copiado"; setTimeout(() => copyBtn.textContent = "Copiar número", 1800); };
+  try { navigator.clipboard.writeText(PHONE_LABEL).then(done, selectPhone); } catch (e) { selectPhone(); }
+});
+function selectPhone(){
+  const r = document.createRange(); r.selectNodeContents(document.getElementById("phone-text"));
+  const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+}
+</script>
+</body>
+</html>
